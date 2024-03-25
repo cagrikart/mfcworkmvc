@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Yarım Sayfa Carousel</title>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <style>
+         .carousel {
+         height: 750px;
+         }
+         .carousel-item {
+         height: 750px;
+         }
+         .carousel-item img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         }
+         .content {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         background-color: #f8f9fa;
+         }
+         .content h1, .content p {
+         margin: 0 0 20px;
+         padding: 0 50px;
+         text-align: center;
+         }
+         .split-left {
+         left: 0;
+         width: 50%;
+         }
+         .split-right {
+         right: 0;
+         width: 50%;
+         }
+         .split-left, .split-right {
+         position: fixed;
+         overflow-x: hidden;
+         }
+         .card-custom {
+         display: flex;
+         flex-direction: row;
+         align-items: center;
+         background-color: #f8f9fa;
+         border-radius: 10px;
+         padding: 1rem;
+         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+         }
+         .card-custom img {
+         height: 100px; /* Adjust as needed */
+         margin-right: 1rem;
+         }
+         .card-custom .text-block {
+         flex-grow: 1;
+         }
+         .card-custom .card-title {
+         font-size: 2rem; /* Large text */
+         margin-bottom: 0;
+         }
+         .card-custom .card-text {
+         font-size: 1rem; /* Regular text */
+         }
+
+      </style>
+   </head>
+   <body style="position:sticky;">
+      <div style="background-color:red;height:500px;">
+          <div class="split-left content" >
+         <h1 style="text-align:start; padding: 0px ;width:475px" id="carousel-heading">Building   Beyond Boundaries</h1>
+         <p style="text-align:left;padding: 0px ; width:475px;"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, error quam dolorem inventore eveniet sit et amet dolor explicabo vero repudiandae mollitia quidem, earum libero vitae dolore dolores blanditiis ullam!</p>
+         <div class="container" style="width:300px;margin-left:150px;">
+            <div class="card-custom">
+               <img src="~/images/100+.png" alt="...">
+               <div class="text-block">
+                  <span style="font-size:40px;font-weight:bold">100+</span>
+                  <br/>
+                  <span>bitirilmiş proje</span>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="split-right">
+         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <img src="~/images/Ekran görüntüsü 2024-03-24 222023.png" alt="Mimari">
+
+               </div>
+               <div class="carousel-item">
+                  <img src="~/images/Ekran görüntüsü 2024-03-24 222023.png" alt="Mimari">
+               </div>
+               <div class="carousel-item">
+                  <img src="~/images/Ekran görüntüsü 2024-03-24 222034.png"  alt="Mimari">
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+      <script>
+         var carouselTexts = [
+           {
+             heading: "Building   Beyond Boundaries",
+           },
+           {
+             heading: "Turning Ideas into Digital Reality",
+           },
+           {
+             heading: "Secure Your Trust,Project Your Future!",
+           }
+         ];
+
+         $('#carouselExampleControls').on('slid.bs.carousel', function (event) {
+           var currentIndex = $('.carousel-item.active').index();
+           var currentText = carouselTexts[currentIndex];
+           $('#carousel-heading').text(currentText.heading);
+           $('#carousel-text').text(currentText.text);
+           $('#carousel-projects').text(currentText.projects);
+         });
+      </script>
+   </body>
+</html>
