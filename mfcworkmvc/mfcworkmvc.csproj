@@ -16,12 +16,4 @@
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.11" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="wwwroot\images\100+.png" />
-    <None Include="wwwroot\images\devam_eden.jpg" />
-    <None Include="wwwroot\images\Ekran görüntüsü 2024-03-24 222005.png" />
-    <None Include="wwwroot\images\Ekran görüntüsü 2024-03-24 222023.png" />
-    <None Include="wwwroot\images\Ekran görüntüsü 2024-03-24 222034.png" />
-  </ItemGroup>
-
 </Project>
