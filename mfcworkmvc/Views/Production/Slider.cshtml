@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yarım Sayfa Carousel</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+       
+
+            .carousel-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius:25px;
+            }
+
+        .content {
+            background-color: #f8f9fa;
+        }
+
+            .content h1, .content p {
+                margin: 0 0 20px;
+                padding: 0 50px;
+                text-align: center;
+            }
+
+        .split-left {
+            left: 0;
+            width: 50%;
+        }
+
+        .split-right {
+            right: 0;
+            width: 50%;
+        }
+        .card-img {
+            object-fit: cover; /* Resmi kutuya sığdır */
+            width: 100%; /* Resmi sütun genişliğine uydur */
+            height: 100%; /* Yüksekliği sabit tut */
+        }
+
+        .card-title {
+            font-size: 2.5rem; /* Başlık boyutunu büyüt */
+            margin-bottom: 0; /* Alt boşluğu kaldır */
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column; /* İçerikleri dikey olarak hizala */
+            justify-content: center; /* İçerikleri ortala */
+            align-items: start; /* İçerikleri sol tarafa yasla */
+            padding: 1.25rem; /* İç boşluğu ekle */
+            text-align: left; /* Metni sola hizala */
+        }
+        .context-body{
+            display: flex;
+            margin-top:-40px;
+            background: #f7f7f7;
+        }
+        .context-body-left{
+            margin-top:250px;
+            margin-left:15%;
+            margin-right:15%;
+        }
+    </style>
+</head>
+<body>
+    <div class="context-body">
+        <div class="split-left ">
+            <div class="context-body-left">
+                <h1 id="carousel-heading">Building   Beyond Boundaries</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia, error quam dolorem inventore eveniet sit et amet dolor explicabo vero repudiandae mollitia quidem, earum libero vitae dolore dolores blanditiis ullam!</p>
+                <div class="container mt-5">
+                    <div class="">
+                        <img width="50%" src="~/images/Screenshot 2024-03-30 150210.png" />
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="split-right">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/images/Ekran görüntüsü 2024-03-24 222005.png" class="d-block w-100" alt="Mimari">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/images/Ekran görüntüsü 2024-03-24 222023.png" class="d-block w-100" alt="Mimari">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/images/Ekran görüntüsü 2024-03-24 222034.png" class="d-block w-100" alt="Mimari">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <script>
+        var carouselTexts = [
+            {
+                heading: "Building   Beyond Boundaries",
+            },
+            {
+                heading: "Başlık 2",
+            },
+            {
+                heading: "Başlık 3",
+            }
+        ];
+
+        $('#carouselExampleControls').on('slid.bs.carousel', function (event) {
+            var currentIndex = $('.carousel-item.active').index();
+            var currentText = carouselTexts[currentIndex];
+            $('#carousel-heading').text(currentText.heading);
+            $('#carousel-text').text(currentText.text);
+            $('#carousel-projects').text(currentText.projects);
+        });
+    </script>
+</body>
+</html>

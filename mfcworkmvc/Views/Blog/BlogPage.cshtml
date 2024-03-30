@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewData["Title"] = "BlogPage";
+    Layout = "~/Views/Shared/ProductionLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Blog Layout</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 20px;
+        }
+
+        .header-content {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-header {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 20px;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+
+        .card-body {
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            padding: 20px;
+        }
+
+        .btn-custom {
+            border: 1px solid black;
+            border-radius: 20px;
+            padding: 5px 30px;
+            font-size: 0.9rem;
+        }
+
+        .blog-text {
+            padding: 0 15px;
+        }
+
+            .blog-text p {
+                text-align: justify;
+            }
+
+        .arrow-icon {
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .card-custom {
+            border-radius: 15px;
+            /* Yuvarlatılmış kenarlar */
+            overflow: hidden;
+            /* İçerik dışarı taşarsa kes */
+            border: 2px solid rgba(0, 0, 0, 0.2);
+            /* Daha belirgin bir kenarlık */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            /* Hafif bir gölge efekti */
+            margin: auto;
+            padding: 15px;
+        }
+
+        .footer {
+            background: #f8f9fa;
+            padding: 2rem 0;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .footer-column {
+            margin-bottom: 1rem;
+        }
+
+        .nav-link {
+            color: black;
+            text-decoration: none;
+        }
+
+            .nav-link:hover {
+                color: black;
+                text-decoration: none;
+            }
+    </style>
+</head>
+<body>
+    <div class="header-content">
+        <h1 class="blog-header">BLOG</h1>
+        <p style="margin-left:15%;margin-right:15%">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nunc vitae quam semper, sit
+            amet fermentum quam lacinia. Vivamus non odio at erat tincidunt fermentum. Sed non augue vel erat
+            tincidunt hendrerit.
+        </p>
+    </div>
+    <div class="container">
+        <div class="row card-custom" style="margin-top: 20px;">
+            <div class="col-md-6 ">
+                <div class="card ">
+                    <img src="~/images/blog.png" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="blog-text">
+                    <h5 class="blog-title">Building Beyond Boundaries</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                        ullamcorper mattis, pulvinar dapibus leo.
+                    </p>
+                    <button class="btn btn-custom d-flex justify-content-between align-items-center"
+                            style="width: 100%;">
+                        İncele
+                        <span class="arrow-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row card-custom" style="margin-top: 20px;">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="~/images/blog.png" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="blog-text">
+                    <h5 class="blog-title">Building Beyond Boundaries</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                        ullamcorper mattis, pulvinar dapibus leo.
+                    </p>
+                    <button class="btn btn-custom d-flex justify-content-between align-items-center"
+                            style="width: 100%;">
+                        İncele
+                        <span class="arrow-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="row card-custom" style="margin-top: 20px;">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="~/images/blog.png" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="blog-text">
+                    <h5 class="blog-title">Building Beyond Boundaries</h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec
+                        ullamcorper mattis, pulvinar dapibus leo.
+                    </p>
+                    <button class="btn btn-custom d-flex justify-content-between align-items-center"
+                            style="width: 100%;">
+                        İncele
+                        <span class="arrow-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                 class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                      d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    @Html.Partial("BlogFooter")
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
