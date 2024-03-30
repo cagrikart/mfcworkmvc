@@ -1,0 +1,485 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projelerimiz</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Özel Stiller -->
+  <style>
+    .container {
+      max-width: 960px;
+      /* Adjust the width as necessary */
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      /* Use a light background */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      /* Soft shadow for depth */
+    }
+
+    .nav-tabs {
+      margin-left: 15%;
+      border: none;
+    }
+
+    /* Styles for the tab items */
+    .nav-item {
+      margin-right: 15px;
+      /* Adjusts the space between tabs */
+    }
+
+    /* Styles for the tab links */
+    .nav-link {
+      border: 1px solid transparent;
+      /* Hides border */
+      border-radius: 15px;
+      /* Rounds corners */
+      padding: 8px 16px;
+      /* Adjust padding */
+      color: #000;
+      /* Text color for non-active tabs */
+      background-color: #f0f0f0;
+      /* Background color for non-active tabs */
+      transition: color 0.3s, background-color 0.3s, border-color 0.3s;
+      /* Smooth transition for hover effects */
+    }
+
+
+
+    /* Styles for the tab content */
+    .tab-content {
+      border: 1px solid #ddd;
+      /* Adds border around the tab content */
+      border-radius: 15px;
+      /* Rounds corners for the tab content */
+      padding: 16px;
+      /* Padding inside the tab content */
+      margin-top: 8px;
+      /* Spacing between tabs and content */
+      background-color: #fff;
+      /* Background color for the tab content */
+    }
+
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      /* Space between cards */
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      flex: 0 1 calc(33.333% - 20px);
+      /* Subtract gap from width */
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      /* Space between rows */
+      background: #fff;
+    }
+
+    .card img {
+      width: 100%;
+      display: block;
+    }
+
+    .card-content {
+      padding: 16px;
+      text-align: center;
+    }
+
+    .card-title {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 8px;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    .card-text {
+      text-align: left;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .card-icon {
+      font-size: 24px;
+      color: #333;
+      display: inline-block;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .card-icon:hover {
+      color: #555;
+      cursor: pointer;
+    }
+
+
+    .main-tab {
+      border-radius: 20px;
+      height: 100px;
+      width: 100px;
+      background-color: #f7f7f7;
+    }
+
+    .alt-tab {
+      border-radius: 20px;
+      border: 1px solid black;
+      background-color: #f7f7f7;
+    }
+
+    .button-tab {
+      height: 30px;
+      width: 30px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 175px;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <!-- Main tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+         <button class="main-tab" id="building-tab" data-toggle="tab" href="#all" role="tab"
+                        aria-controls="building" aria-selected="false">
+            <i class="fa-solid fa-ellipsis"></i><br />
+            <h6>ALL</h6>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="main-tab" id="building-tab" data-toggle="tab" href="#building" role="tab"
+          aria-controls="building" aria-selected="false">
+          <i class="fa-regular fa-building"></i><br />
+          <h6>Building</h6>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="main-tab" id="software-tab" data-toggle="tab" href="#software" role="tab"
+          aria-controls="software" aria-selected="false">
+          <i class="fa-solid fa-cubes"></i>
+          <h6>Software</h6>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="main-tab" id="software-tab" data-toggle="tab" href="#building" role="tab"
+          aria-controls="software" aria-selected="false">
+          <i class="fa-solid fa-umbrella"></i>
+          <h6>Insurance</h6>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="main-tab" id="building-tab" data-toggle="tab" href="#building" role="tab"
+          aria-controls="building" aria-selected="false">
+          <i class="fa-regular fa-building"></i><br />
+          <h6>Building</h6>
+        </button>
+      </li>
+      <li class="nav-item">
+        <button class="main-tab" id="building-tab" data-toggle="tab" href="#building" role="tab"
+          aria-controls="building" aria-selected="false">
+          <i class="fa-regular fa-building"></i><br />
+          <h6>Building</h6>
+        </button>
+      </li>
+    </ul>
+
+    <!-- Tab content -->
+    <div class="tab-content" id="myTabContent">
+      <h3 style="text-align: center;">Projelerimiz</h3>
+      <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+                <div class="card-container">
+                    <!-- Card 1 -->
+                    <div class="card">
+                        <img src="~/images/insaat.png" alt="Istanbul Esenler">
+                        <div class="card-content">
+                            <div class="card-title">İstanbul Esenlerrrr</div>
+                            <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                            <button class="button-tab">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="~/images/insaat.png" alt="Istanbul Esenler">
+                        <div class="card-content">
+                            <div class="card-title">İstanbul Esenlerrrr</div>
+                            <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                            <button class="button-tab">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="~/images/insaat.png" alt="Istanbul Esenler">
+                        <div class="card-content">
+                            <div class="card-title">İstanbul Esenlerrrr</div>
+                            <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                            <button class="button-tab">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="~/images/insaat.png" alt="Istanbul Esenler">
+                        <div class="card-content">
+                            <div class="card-title">İstanbul Esenlerrrr</div>
+                            <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                            <button class="button-tab">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    </div>
+      </div>
+      <div class="tab-pane fade" id="building" role="tabpanel" aria-labelledby="building-tab">
+        <!-- Sub tabs for Building -->
+        <ul class="nav nav-tabs" id="buildingTab" role="tablist" style=" margin-left: 25%;">
+          <li class="nav-item">
+            <button class="btn active alt-tab" id="construction-tab" data-toggle="tab" href="#construction" role="tab"
+              aria-controls="construction" aria-selected="true">
+              Hepsi
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn  alt-tab" id="constructionPhase-tab" data-toggle="tab" href="#constructionPhase"
+              role="tab" aria-controls="constructionPhase" aria-selected="false">
+              İnşaat Aşamasında
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn  alt-tab" id="constructionPhase-tab" data-toggle="tab" href="#constructionPhase"
+              role="tab" aria-controls="constructionPhase" aria-selected="false">
+              Ev
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn  alt-tab" id="constructionPhase-tab" data-toggle="tab" href="#constructionPhase"
+              role="tab" aria-controls="constructionPhase" aria-selected="false">
+              Ofis
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn  alt-tab" id="constructionPhase-tab" data-toggle="tab" href="#constructionPhase"
+              role="tab" aria-controls="constructionPhase" aria-selected="false">
+              Villa
+            </button>
+          </li>
+
+        </ul>
+        <!-- Content for sub tabs -->
+        <div class="tab-content" id="buildingTabContent">
+          <div class="tab-pane fade show active" id="construction" role="tabpanel" aria-labelledby="construction-tab">
+            <div class="card-container">
+              <!-- Card 1 -->
+              <div class="card">
+                <img src="~/images/insaat.png" alt="Istanbul Esenler">
+                <div class="card-content">
+                  <div class="card-title">İstanbul Esenlerrrr</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card">
+                <img src="~/images/insaat.png" alt="Istanbul Esenler">
+                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card">
+                                <img src="~/images/insaat.png" alt="Istanbul Esenler">
+                                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card">
+                <img src="~/images/insaat.png" alt="Istanbul Esenler">
+                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="constructionPhase" role="tabpanel" aria-labelledby="constructionPhase-tab">
+            <div class="card-container">
+              <!-- Card 1 -->
+              <div class="card">
+                                <img src="~/images/insaat.png" alt="Istanbul Esenler">
+                                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                                <img src="~/images/devam_eden.png" alt="Istanbul Esenler">
+                                <img src="devam_eden.jpg" alt="Istanbul Esenler">
+                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card">
+                                <img src="~/images/devam_eden.png" alt="Istanbul Esenler">
+                                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card">
+                                <img src="~/images/devam_eden.png" alt="Istanbul Esenler">
+                                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="tab-pane fade" id="software" role="tabpanel" aria-labelledby="software-tab">
+        <!-- Sub tabs for Building -->
+        <ul class="nav nav-tabs" id="softwareTab" role="tablist" style="margin-left: 30%;">
+          <li class="nav-item">
+            <button class="btn active alt-tab" id="software_all-tab" data-toggle="tab" href="#software_all" role="tab"
+              aria-controls="construction" aria-selected="true">
+              Hepsi
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn  alt-tab" id="software_devam_eden-tab" data-toggle="tab" href="#software_devam_eden"
+              role="tab" aria-controls="software_devam_eden-tab" aria-selected="false">
+              Devam Eden
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn  alt-tab" id="software_devam_eden-tab" data-toggle="tab" href="#software_devam_eden"
+              role="tab" aria-controls="software_devam_eden-tab" aria-selected="false">
+              Tamamlanan
+            </button>
+          </li>
+        </ul>
+        <!-- Content for sub tabs -->
+        <div class="tab-content" id="softwareTabContent">
+          <div class="tab-pane fade show active" id="software_all" role="tabpanel" aria-labelledby="construction-tab">
+            <div class="card-container">
+              <!-- Card 1 -->
+              <div class="card">
+                <img src="~/images/software.png" alt="Istanbul Esenler">
+                <div class="card-content">
+                  <div class="card-title">Mobil Uygulamaaaa</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="tab-pane fade" id="software_devam_eden" role="tabpanel" aria-labelledby="software_devam_eden-tab">
+            <div class="card-container">
+              <!-- Card 1 -->
+              <div class="card">
+                <img src="~/images/mobil-uygulama-yapmak-artik-cok-kolay.jpg" alt="Istanbul Esenler">
+                <div class="card-content">
+                  <div class="card-title">Mobil Uygulamaa</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card">
+                                <img src="~/images/mobil-uygulama-yapmak-artik-cok-kolay.jpg" alt="Istanbul Esenler">
+                                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card">
+                                <img src="~/images/mobil-uygulama-yapmak-artik-cok-kolay.jpg" alt="Istanbul Esenler">
+                                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card">
+                                <img src="~/images/mobil-uygulama-yapmak-artik-cok-kolay.jpg" alt="Istanbul Esenler">
+                                <div class="card-content">
+                  <div class="card-title">İstanbul Esenler</div>
+                  <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                  <button class="button-tab">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bootstrap ve jQuery kütüphaneleri -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
