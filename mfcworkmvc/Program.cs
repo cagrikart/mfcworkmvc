@@ -7,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<MainCategoryService>();
+builder.Services.AddScoped<SubCategoryService>();
 
 builder.Services.AddDbContext<MvcDbContext>(options =>
 {
@@ -31,6 +33,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Production}/{action=ProductionPage}/{id?}");
+    pattern: "{controller=Product}/{action=Index}/{id?}");
 
 app.Run();

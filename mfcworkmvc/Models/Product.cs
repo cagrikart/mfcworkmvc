@@ -6,6 +6,8 @@
         public string name { get; set; }
         public string description { get; set; }
 
-
+        public MainCategory mainCategory { get; set;} 
+        
+        public SubCategory subCategory { get; set; }    
     }
 }

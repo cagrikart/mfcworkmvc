@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<MainCategory>
+
+<h1>MainCategory List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var mainCategory in Model)
+        {
+            <tr>
+                <td>@mainCategory.id</td>
+                <td>@mainCategory.name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
