@@ -1,95 +1,107 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Footer Example</title>
-<!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Example</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
         .footer {
             background: #f8f9fa;
             padding: 2rem 0;
-            margin-top: auto; /* Push the footer to the bottom */
         }
-    .footer-logo {
-        font-size: 2rem;
-        font-weight: bold;
-    }
-    .footer-column {
-        margin-bottom: 1rem;
-    }
-    .nav-link {
-        color: black; 
-        text-decoration: none; 
-    }
-      .nav-link:hover {
-        color: black; 
-        text-decoration: none; 
-    }
-</style>
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
+        .footer-column {
+            margin-bottom: 1rem;
+        }
+
+        .nav-link {
+            color: black;
+            text-decoration: none;
+        }
+
+            .nav-link:hover {
+                color: black;
+                text-decoration: none;
+            }
+
+        .contact-icons {
+            color: #0c0f12;
+            background-color: #f4f4f4;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 footer-column">
-        <div class="footer-logo">
-          <div>MFC</div>
-        </div>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nunc vitae quam semper, sit amet fermentum quam lacinia. Vivamus non odio at erat tincidunt fermentum. Sed non augue vel erat tincidunt hendrerit.
-        </p>
-        <!-- Social icons -->
-                    <div class="contact-icons mt-3">
-                        <img src="~/images/face-icon.png" alt="1" class="custom-image-icons">
-                        <img src="~/images/insta-icon.png" alt="1" class="custom-image-icons">
-                        <img src="~/images/tw-icon.png" alt="1" class="custom-image-icons">
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 footer-column">
+                    <div class="footer-logo">
+                        <div>MFC</div>
                     </div>
-      </div>
-      <div class="col-md-2 footer-column">
-        <h5>Product</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Anasayfa</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Hakkimizda</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-2 footer-column">
-        <h5>CMS</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Blog Single</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-2 footer-column">
-        <h5>Utility</h5>
-        <ul class="nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#">404 Error</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nunc vitae quam semper, sit amet fermentum quam lacinia. Vivamus non odio at erat tincidunt fermentum. Sed non augue vel erat tincidunt hendrerit.
+                    </p>
+                    <!-- Social icons -->
+                    <div style="margin-top: 20px;">
+                        <i class=" contact-icons fa-brands fa-facebook-f"></i>
+                        <i class=" contact-icons fa-brands fa-instagram"></i>
+                        <i class=" contact-icons fa-brands fa-square-twitter"></i>
+                    </div>
+                </div>
+                <div class="col-md-2 footer-column">
+                    <h5>Product</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hakkimizda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 footer-column">
+                    <h5>CMS</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog Single</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 footer-column">
+                    <h5>Utility</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">404 Error</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
