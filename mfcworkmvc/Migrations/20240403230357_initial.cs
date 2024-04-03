@@ -6,11 +6,25 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace mfcworkmvc.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Grades",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    GrandName = table.Column<string>(type: "text", nullable: false),
+                    Section = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Grades", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "MainCategories",
                 columns: table => new
@@ -30,17 +44,31 @@ namespace mfcworkmvc.Migrations
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    name = table.Column<string>(type: "text", nullable: false),
-                    mainCategoryid = table.Column<int>(type: "integer", nullable: false)
+                    name = table.Column<string>(type: "text", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SubCategories", x => x.id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Students",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    FirstName = table.Column<string>(type: "text", nullable: false),
+                    LastName = table.Column<string>(type: "text", nullable: false),
+                    GradeId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Students", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SubCategories_MainCategories_mainCategoryid",
-                        column: x => x.mainCategoryid,
-                        principalTable: "MainCategories",
-                        principalColumn: "id",
+                        name: "FK_Students_Grades_GradeId",
+                        column: x => x.GradeId,
+                        principalTable: "Grades",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -52,53 +80,58 @@ namespace mfcworkmvc.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     name = table.Column<string>(type: "text", nullable: false),
                     description = table.Column<string>(type: "text", nullable: false),
-                    mainCategoryid = table.Column<int>(type: "integer", nullable: false),
-                    subCategoryid = table.Column<int>(type: "integer", nullable: false)
+                    subCategoryId = table.Column<int>(type: "integer", nullable: false),
+                    SubCategoryid = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Products", x => x.id);
                     table.ForeignKey(
-                        name: "FK_Products_MainCategories_mainCategoryid",
-                        column: x => x.mainCategoryid,
-                        principalTable: "MainCategories",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        name: "FK_Products_SubCategories_SubCategoryid",
+                        column: x => x.SubCategoryid,
+                        principalTable: "SubCategories",
+                        principalColumn: "id");
                     table.ForeignKey(
-                        name: "FK_Products_SubCategories_subCategoryid",
-                        column: x => x.subCategoryid,
+                        name: "FK_Products_SubCategories_subCategoryId",
+                        column: x => x.subCategoryId,
                         principalTable: "SubCategories",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_mainCategoryid",
+                name: "IX_Products_subCategoryId",
                 table: "Products",
-                column: "mainCategoryid");
+                column: "subCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Products_subCategoryid",
+                name: "IX_Products_SubCategoryid",
                 table: "Products",
-                column: "subCategoryid");
+                column: "SubCategoryid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SubCategories_mainCategoryid",
-                table: "SubCategories",
-                column: "mainCategoryid");
+                name: "IX_Students_GradeId",
+                table: "Students",
+                column: "GradeId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "MainCategories");
+
+            migrationBuilder.DropTable(
                 name: "Products");
+
+            migrationBuilder.DropTable(
+                name: "Students");
 
             migrationBuilder.DropTable(
                 name: "SubCategories");
 
             migrationBuilder.DropTable(
-                name: "MainCategories");
+                name: "Grades");
         }
     }
 }

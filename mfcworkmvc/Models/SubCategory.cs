@@ -4,7 +4,7 @@
     {
         public int id { get; set; }
         public string name { get; set; }
+        public ICollection<Product> Products { get; set; }
 
-        public MainCategory mainCategory { get; set; } 
     }
 }

@@ -1,0 +1,18 @@
+﻿@{
+    ViewData["Title"] = "CreateSubCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model SubCategory
+
+<h1>Add New SubCategory -</h1>
+
+<form asp-action="CreateSubCategory" method="post">
+    <div class="form-group">
+        <label asp-for="name">Name:</label>
+        <input asp-for="name" class="form-control" />
+    </div>
+
+    <button style="margin-top:25px;" type="submit" class="btn btn-primary">Add Sub Category</button>
+</form>
+
+

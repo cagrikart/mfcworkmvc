@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewData["Title"] = "SubControllerList";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<SubCategory>
+
+<h1>SubCategory List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var subCategory in Model)
+        {
+            <tr>
+                <td>@subCategory.id</td>
+                <td>@subCategory.name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

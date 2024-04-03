@@ -30,9 +30,38 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="MainCategory" asp-action="Create">Add Main Category</a>
+
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Production" asp-action="Index">Production</a>
+
+                            <a class="nav-link text-dark" asp-area="" asp-controller="MainCategory" asp-action="Index"> Main Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="SubCategory" asp-action="CreateSubCategory">Add Sub Category</a>
+
+                        </li>
+                        <li class="nav-item">
+
+                            <a class="nav-link text-dark" asp-area="" asp-controller="SubCategory" asp-action="SubControllerList"> Sub Category</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Production" asp-action="ProductionPage">Production</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Grades" asp-action="Index">Grades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Grades" asp-action="Create"> CreateGrades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Index">Student</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Students" asp-action="Create"> CreateStudent</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Production" asp-action="ProductionPage">Production</a>
                         </li>
                     </ul>
                 </div>
