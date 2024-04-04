@@ -12,7 +12,7 @@ using mfcworkmvc;
 namespace mfcworkmvc.Migrations
 {
     [DbContext(typeof(MvcDbContext))]
-    [Migration("20240404180611_initial")]
+    [Migration("20240404190139_initial")]
     partial class initial
     {
         /// <inheritdoc />

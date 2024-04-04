@@ -1,14 +1,15 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "ProductionPage";
     Layout = "~/Views/Shared/ProductionLayout.cshtml";
 }
 
-@Html.Partial("Slider")
-@Html.Partial("Project")
-@Html.Partial("Services")
-@Html.Partial("Solutions")
-@Html.Partial("Sikca_Sorulan")
-@Html.Partial("ContactUs") 
-@Html.Partial("Footer")
+<partial name="Slider" />
+<partial name="Project" model="Model"/>
+<partial name="Services" />
+<partial name="Solutions" />
+<partial name="Sikca_Sorulan" />
+<partial name="ContactUs" />
+<partial name="Footer" />
+
+
 

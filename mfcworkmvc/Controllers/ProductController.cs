@@ -24,6 +24,7 @@ namespace mfcworkmvc.Controllers
             var products = _productService.GetAllProducts();
             return View(products);
         }
+       
         public ActionResult Create()
         {
             ViewData["subCategoryId"] = new SelectList(_dbContext.SubCategories, "id", "name");
