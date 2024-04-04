@@ -7,7 +7,7 @@
 
 <h1>Create</h1>
 
-<h4>Student</h4>
+<h4>Product</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -26,6 +26,10 @@
             <div class="form-group">
                 <label asp-for="subCategoryId" class="control-label"></label>
                 <select asp-for="subCategoryId" class="form-control" asp-items="ViewBag.subCategoryId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="mainCategoryId" class="control-label"></label>
+                <select asp-for="mainCategoryId" class="form-control" asp-items="ViewBag.mainCategoryId"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

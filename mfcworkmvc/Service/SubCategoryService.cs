@@ -1,4 +1,5 @@
 ﻿using mfcworkmvc.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace mfcworkmvc.Service
 {
@@ -17,7 +18,7 @@ namespace mfcworkmvc.Service
         }
         public List<SubCategory> GetAllSubCategories()
         {
-            return _dbContext.SubCategories.ToList();
+            return _dbContext.SubCategories.Include(p => p.mainCategory).ToList();
         }
     }
 }

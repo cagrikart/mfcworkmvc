@@ -27,18 +27,19 @@ namespace mfcworkmvc.Controllers
         public ActionResult Create()
         {
             ViewData["subCategoryId"] = new SelectList(_dbContext.SubCategories, "id", "name");
+            ViewData["mainCategoryId"] = new SelectList(_dbContext.MainCategories, "id", "name");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name,description,subCategoryId")] Product product)
+        public async Task<IActionResult> Create([Bind("id,name,description,subCategoryId,mainCategoryId")] Product product)
         {
 
             _dbContext.Add(product);
             await _dbContext.SaveChangesAsync();
 
-            ViewData["subCategoryId"] = new SelectList(_dbContext.SubCategories, "id", "name", product.subCategoryId);
+          
             return RedirectToAction("Index");
         }
     }   

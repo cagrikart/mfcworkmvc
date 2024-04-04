@@ -12,6 +12,10 @@ namespace mfcworkmvc.Models
         public int? subCategoryId { get; set; }
 
 
-        public SubCategory subCategory { get; set; }    
+        public SubCategory subCategory { get; set; }
+
+        [ForeignKey("mainCategoryId")]
+        public int? mainCategoryId { get; set; }
+        public MainCategory mainCategory { get; set; }
     }
 }

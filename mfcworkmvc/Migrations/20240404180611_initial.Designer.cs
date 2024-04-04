@@ -12,7 +12,7 @@ using mfcworkmvc;
 namespace mfcworkmvc.Migrations
 {
     [DbContext(typeof(MvcDbContext))]
-    [Migration("20240403230357_initial")]
+    [Migration("20240404180611_initial")]
     partial class initial
     {
         /// <inheritdoc />
@@ -78,6 +78,9 @@ namespace mfcworkmvc.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int?>("mainCategoryId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("text");
@@ -89,6 +92,8 @@ namespace mfcworkmvc.Migrations
                     b.HasKey("id");
 
                     b.HasIndex("SubCategoryid");
+
+                    b.HasIndex("mainCategoryId");
 
                     b.HasIndex("subCategoryId");
 
@@ -129,11 +134,16 @@ namespace mfcworkmvc.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
+                    b.Property<int?>("mainCategoryId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("name")
                         .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("id");
+
+                    b.HasIndex("mainCategoryId");
 
                     b.ToTable("SubCategories");
                 });
@@ -144,11 +154,17 @@ namespace mfcworkmvc.Migrations
                         .WithMany("Products")
                         .HasForeignKey("SubCategoryid");
 
+                    b.HasOne("mfcworkmvc.Models.MainCategory", "mainCategory")
+                        .WithMany()
+                        .HasForeignKey("mainCategoryId");
+
                     b.HasOne("mfcworkmvc.Models.SubCategory", "subCategory")
                         .WithMany()
                         .HasForeignKey("subCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("mainCategory");
 
                     b.Navigation("subCategory");
                 });
@@ -162,6 +178,15 @@ namespace mfcworkmvc.Migrations
                         .IsRequired();
 
                     b.Navigation("Grade");
+                });
+
+            modelBuilder.Entity("mfcworkmvc.Models.SubCategory", b =>
+                {
+                    b.HasOne("mfcworkmvc.Models.MainCategory", "mainCategory")
+                        .WithMany()
+                        .HasForeignKey("mainCategoryId");
+
+                    b.Navigation("mainCategory");
                 });
 
             modelBuilder.Entity("mfcworkmvc.Models.Grade", b =>
