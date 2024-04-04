@@ -1,19 +1,28 @@
-﻿
-@{
+﻿@{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @model MainCategory
 
-<h1>Add New Main Category</h1>
-
-<form asp-action="Create" method="post">
-    <div class="form-group">
-        <label asp-for="name">Name:</label>
-        <input asp-for="name" class="form-control" />
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Add New Main Category</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div class="form-group">
+                            <label asp-for="name" class="control-label">Name:</label>
+                            <input asp-for="name" class="form-control" placeholder="Enter main category name" />
+                        </div>
+                        <div class="form-group">
+                            <button style="margin-top:25px;" type="submit" class="btn btn-success btn-block">Add Main Category</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-     
-    <button style="margin-top:25px;" type="submit" class="btn btn-primary">Add Main Category</button>
-</form>
-
-
+</div>

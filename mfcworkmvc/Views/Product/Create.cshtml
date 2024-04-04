@@ -4,42 +4,95 @@
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<style>
+    .container {
+        padding-top: 2rem;
+    }
 
-<h1>Create</h1>
+    .card-header h2 {
+        color: #333;
+    }
 
-<h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="name" class="control-label"></label>
-                <input asp-for="name" class="form-control" />
-                <span asp-validation-for="name" class="text-danger"></span>
+    .card {
+        box-shadow: 0 5px 15px rgba(0,0,0,.1);
+    }
+
+    .form-control {
+        border-radius: 0.25rem;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #1e7e34;
+        }
+
+    .btn-outline-secondary {
+        border-color: #6c757d;
+    }
+
+        .btn-outline-secondary:hover {
+            background-color: #6c757d;
+            color: white;
+        }
+
+    .alert-danger {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+    }
+
+</style>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Create Product</h2>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <div class="form-group">
+                            <label asp-for="name" class="control-label">Name</label>
+                            <input asp-for="name" class="form-control" placeholder="Enter product name" />
+                            <span asp-validation-for="name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="description" class="control-label">Description</label>
+                            <textarea asp-for="description" class="form-control" rows="3" placeholder="Enter product description"></textarea>
+                            <span asp-validation-for="description" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="subCategoryId" class="control-label">Sub Category</label>
+                            <select asp-for="subCategoryId" class="form-control" asp-items="ViewBag.subCategoryId"></select>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="mainCategoryId" class="control-label">Main Category</label>
+                            <select asp-for="mainCategoryId" class="form-control" asp-items="ViewBag.mainCategoryId"></select>
+                        </div>
+
+                        <div class="form-group mt-4">
+                            <button type="submit" class="btn btn-success btn-block">Create</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="description" class="control-label"></label>
-                <input asp-for="description" class="form-control" />
-                <span asp-validation-for="description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="subCategoryId" class="control-label"></label>
-                <select asp-for="subCategoryId" class="form-control" asp-items="ViewBag.subCategoryId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="mainCategoryId" class="control-label"></label>
-                <select asp-for="mainCategoryId" class="form-control" asp-items="ViewBag.mainCategoryId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-4">
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
 </div>
 
 @section Scripts {
@@ -47,4 +100,3 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-
