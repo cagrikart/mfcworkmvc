@@ -31,7 +31,8 @@
         }
 
         .nav-tabs {
-            margin-left: 15%;
+            display: flex;
+            justify-content: center;
             border: none;
         }
 
@@ -43,7 +44,6 @@
 
         /* Styles for the tab links */
         .nav-link {
-            border: 1px solid transparent;
             /* Hides border */
             border-radius: 15px;
             /* Rounds corners */
@@ -53,7 +53,6 @@
             /* Text color for non-active tabs */
             background-color: #f0f0f0;
             /* Background color for non-active tabs */
-            transition: color 0.3s, background-color 0.3s, border-color 0.3s;
             /* Smooth transition for hover effects */
         }
 
@@ -71,6 +70,8 @@
             /* Spacing between tabs and content */
             background-color: #fff;
             /* Background color for the tab content */
+            margin-left:15%;
+            margin-right:15%;
         }
 
 
@@ -158,53 +159,30 @@
 </head>
 
 <body>
-    <!-- Main tabs, 'All' tab included -->
-    <ul class="nav nav-tabs" id="myTab" role="tablist">
-        <li class="nav-item">
-            <button class="main-tab" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">
-                <i class="fa-solid fa-ellipsis"></i><br />
-                <h6>ALL</h6>
-            </button>
-        </li>
-        @foreach (var mainCategory in Model.MainCategories)
-        {
+    <div>
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
-                <button class="main-tab @(counterHeader == 0 ? "active" : "")" id="category-tab-@mainCategory.id" data-toggle="tab" href="#category-@mainCategory.id" role="tab" aria-controls="category-@mainCategory.id" aria-selected="@(counterHeader == 0 ? "true" : "false")">
-                    <i class="fa-regular fa-building"></i><br />
-                    <h6>@mainCategory.name</h6>
+                <button class="main-tab" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">
+                    <i class="fa-solid fa-ellipsis"></i><br />
+                    <h6>ALL</h6>
                 </button>
             </li>
-            counterHeader++;
-        }
-    </ul>
+            @foreach (var mainCategory in Model.MainCategories)
+            {
+                <li class="nav-item">
+                    <button class="main-tab @(counterHeader == 0 ? "active" : "")" id="category-tab-@mainCategory.id" data-toggle="tab" href="#category-@mainCategory.id" role="tab" aria-controls="category-@mainCategory.id" aria-selected="@(counterHeader == 0 ? "true" : "false")">
+                        <i class="fa-regular fa-building"></i><br />
+                        <h6>@mainCategory.name</h6>
+                    </button>
+                </li>
+                counterHeader++;
+            }
+        </ul>
 
-    <!-- Tab content, including content for 'All' tab -->
-    <div class="tab-content" id="myTabContent">
-        <!-- All Products Tab Content -->
-        <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-            <div class="card-container">
-                @foreach (var product in Model.Products)
-                {
-                    <div class="card">
-                        <img src="~/images/insaat.png" alt="@product.name">
-                        <div class="card-content">
-                            <div class="card-title">@product.name</div>
-                            <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
-                            <button class="button-tab">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-
-        <!-- Other Categories Tab Content -->
-        @foreach (var mainCategory in Model.MainCategories)
-        {
-            <div class="tab-pane fade" id="category-@mainCategory.id" role="tabpanel" aria-labelledby="category-tab-@mainCategory.id">
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
                 <div class="card-container">
-                    @foreach (var product in Model.Products.Where(p => p.mainCategory.id == mainCategory.id))
+                    @foreach (var product in Model.Products)
                     {
                         <div class="card">
                             <img src="~/images/insaat.png" alt="@product.name">
@@ -219,10 +197,52 @@
                     }
                 </div>
             </div>
-            counterBody++;
-        }
-    </div>
 
+
+            @foreach (var mainCategory in Model.MainCategories)
+            {
+                <div class="tab-pane fade" id="category-@mainCategory.id" role="tabpanel" aria-labelledby="category-tab-@mainCategory.id">
+                    <ul class="nav nav-tabs" id="sub-tab-@mainCategory.id" role="tablist">
+                        @foreach (var subCategory in mainCategory.SubCategories)
+                        {
+                            <li class="nav-item">
+
+                                <button class="btn  alt-tab" id="subcategory-tab-@subCategory.id" data-toggle="tab" href="#subcategory-@subCategory.id" role="tab" aria-controls="subcategory-@subCategory.id" aria-selected="true">
+                                    @subCategory.name
+                                </button>
+                            </li>
+                        }
+                    </ul>
+                    <div class="tab-content" id="sub-tab-content-@mainCategory.id">
+                        @foreach (var subCategory in mainCategory.SubCategories)
+                        {
+                            <div class="tab-pane fade" id="subcategory-@subCategory.id" role="tabpanel" aria-labelledby="subcategory-tab-@subCategory.id">
+                                <div class="card-container">
+                                    @foreach (var product in Model.Products.Where(p => p.mainCategoryId == mainCategory.id && p.subCategoryId == subCategory.id))
+                                    {
+                                        <div class="card">
+                                            <img src="~/images/insaat.png" alt="@product.name">
+                                            <div class="card-content">
+                                                <div class="card-title">@product.name</div>
+                                                <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                                                <button class="button-tab">
+                                                    <i class="fa-solid fa-chevron-right"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                counterBody++;
+            }
+
+
+        </div>
+
+    </div>
 
 
 
