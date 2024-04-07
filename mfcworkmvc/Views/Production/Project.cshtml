@@ -171,8 +171,13 @@
             margin-left: 15%;
             margin-right: 15%;
         }
-
-        
+        .card a {
+            color: #333;
+        }
+        .card a:hover {
+            text-decoration:none;
+                color: #333;
+            }
     </style>
 </head>
 
@@ -238,18 +243,22 @@
                             <div class="tab-pane fade" id="subcategory-@subCategory.id" role="tabpanel" aria-labelledby="subcategory-tab-@subCategory.id">
                                 <div class="card-container">
                                     @foreach (var product in Model.Products.Where(p => p.mainCategoryId == mainCategory.id && p.subCategoryId == subCategory.id))
-                                    {
+                                        {
                                         <div class="card">
-                                            <img src="~/images/insaat.png" alt="@product.name">
-                                            <div class="card-content">
-                                                <div class="card-title">@product.name</div>
-                                                <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
-                                                <button class="button-tab">
-                                                    <i class="fa-solid fa-chevron-right"></i>
-                                                </button>
-                                            </div>
+                                            <a href="@Url.Action("ProductDetail", "Production", new { id = product.id })">
+                                                <!-- Burada ProductDetail ve Product controller ve action isimlerine göre düzenleme yapmanız gerekebilir -->
+                                                <img src="~/images/insaat.png" alt="@product.name">
+                                                <div class="card-content">
+                                                    <div class="card-title">@product.name</div>
+                                                    <div class="card-text">Lorem ipsum dolor sit amet consectetur adipiscing elit.</div>
+                                                    <button class="button-tab">
+                                                        <i class="fa-solid fa-chevron-right"></i>
+                                                    </button>
+                                                </div>
+                                            </a>
                                         </div>
-                                    }
+                                        }
+                                        
                                 </div>
                             </div>
                         }
