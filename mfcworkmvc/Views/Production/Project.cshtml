@@ -69,21 +69,22 @@
             margin-top: 8px;
             /* Spacing between tabs and content */
             background-color: #fff;
-            /* Background color for the tab content */
-            margin-left:15%;
-            margin-right:15%;
+        
         }
 
 
         .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 20px;
             /* Space between cards */
             justify-content: center;
             padding: 20px;
         }
 
+        .card:nth-child(3n+1) {
+            grid-column-start: 1; /* 4., 8., 12., ... kartları ilk sütunda başlat */
+        }
         .card {
             flex: 0 1 calc(33.333% - 20px);
             /* Subtract gap from width */
@@ -176,7 +177,7 @@
 </head>
 
 <body>
-    <div>
+    <div style="margin-top:3%;margin-left: 150px;margin-right: 150px;">
         <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item">
                 <button class="main-tab" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">
