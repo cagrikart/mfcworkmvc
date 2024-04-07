@@ -4,5 +4,419 @@
     Layout = "~/Views/Shared/ProductionLayout.cshtml";
 }
 
-<h1>ProductDetail</h1>
+<!DOCTYPE html>
+<html lang="tr">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Tasarımı</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<style>
+    .custom-card {
+        max-width: 1000px;
+        margin: auto;
+        margin-bottom: 30px;
+        ;
+        overflow: hidden;
+        /* Eğer kartın köşeleri yuvarlaksa ve görsel köşeleri taşarsa */
+        border-radius: 16px;
+        /* Kartın köşelerini yuvarlak yapmak için */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Gölge efekti */
+    }
+
+        .custom-card img {
+            width: 100%;
+            padding: 0px;
+            height: auto;
+            /* Resmi orantılı olarak ölçeklendir */
+        }
+
+    .custom-card-body {
+        padding: 20px;
+        /* İçerik bölümü padding */
+    }
+
+    .custom-card-title {
+        font-size: 24px;
+        /* Başlık font boyutu */
+        margin-bottom: 10px;
+        /* Başlık altı boşluk */
+    }
+
+    .custom-card-text {
+        font-size: 16px;
+        /* Metin font boyutu */
+    }
+
+    .header {
+        margin-left: 15%;
+        margin-right: 15%;
+        margin-bottom: 30px;
+    }
+
+    .iframe-content {
+        max-width: 1000px;
+        height: 650px;
+        margin: auto;
+        margin-bottom: 30px;
+        ;
+        overflow: hidden;
+        /* Eğer kartın köşeleri yuvarlaksa ve görsel köşeleri taşarsa */
+        border-radius: 16px;
+        /* Kartın köşelerini yuvarlak yapmak için */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    iframe {
+        border: 0;
+        width: 100%;
+        padding: 0px;
+        height: 500px;
+    }
+
+    .custom-iframe-text {
+        font-size: 16px;
+        margin-left: 5%;
+        text-align: center;
+    }
+
+    .card {
+        border-radius: 25px;
+        height: 200px;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: space-around;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-section-contacUs {
+        margin-left: 20%;
+        margin-top: 25px;
+    }
+
+    .contact-info, .contact-form {
+        border-radius: 10px;
+    }
+
+        .contact-form button {
+            background-color: #007bff; /* Bootstrap primary blue */
+            color: white;
+            border-radius: 25px;
+            border: none;
+            padding: 10px 20px;
+        }
+
+    .form-control {
+        border-radius: 10px;
+    }
+
+    .contact-form button:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    .contact-info div, .contact-info a {
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+
+    .contact-icons {
+        font-size: 24px; /* Adjust icon size as needed */
+        color: #007bff; /* Bootstrap primary blue */
+    }
+
+        .contact-icons a {
+            margin: 0 10px;
+        }
+
+    .custom-image-icons {
+        width: 25px;
+        height: 25px;
+    }
+
+    .footer {
+        background: #f8f9fa;
+        padding: 2rem 0;
+        margin-top: auto; /* Push the footer to the bottom */
+    }
+
+    .footer-logo {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .footer-column {
+        margin-bottom: 1rem;
+    }
+
+    .nav-link {
+        color: black;
+        text-decoration: none;
+    }
+
+        .nav-link:hover {
+            color: black;
+            text-decoration: none;
+        }
+</style>
+
+<body>
+    <div>
+        <div class="header">
+            <h1 style="text-align: center;">Istanbul Esenler</h1>
+            <p class="custom-card-text" style="font-weight: 525;">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Nullam fringilla nunc vitae quam semper, sit amet fermentum quam lacinia. Vivamus non odio at erat tincidunt
+                fermentum. Sed non augue vel erat tincidunt hendrerit.
+            </p>
+        </div>
+        <div class="custom-card">
+            <img src="~/images/d1.png" alt="Proje İstanbul Dış Görünüm">
+            <div class="custom-card-body">
+                <h3 class="custom-card-title">Proje İstanbul Dış Görünüm</h3>
+                <p class="custom-card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nunc vitae
+                    quam semper, sit amet fermentum quam lacinia. Vivamus non odio at erat tincidunt fermentum. Sed non augue vel
+                    erat tincidunt hendrerit.
+                </p>
+            </div>
+        </div>
+        <div class="custom-card">
+            <img src="~/images/d1.png" alt="Proje İstanbul Dış Görünüm">
+            <div class="custom-card-body">
+                <h3 class="custom-card-title">Proje İstanbul Dış Görünüm</h3>
+                <p class="custom-card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nunc vitae
+                    quam semper, sit amet fermentum quam lacinia. Vivamus non odio at erat tincidunt fermentum. Sed non augue vel
+                    erat tincidunt hendrerit.
+                </p>
+            </div>
+        </div>
+        <div class="custom-card">
+            <img src="~/images/d1.png" alt="Proje İstanbul Dış Görünüm">
+
+            <div class="custom-card-body">
+                <h3 class="custom-card-title">Proje İstanbul Dış Görünüm</h3>
+                <p class="custom-card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nunc vitae
+                    quam semper, sit amet fermentum quam lacinia. Vivamus non odio at erat tincidunt fermentum. Sed non augue vel
+                    erat tincidunt hendrerit.
+                </p>
+            </div>
+        </div>
+        <div class="custom-card">
+            <img src="~/images/d1.png" alt="Proje İstanbul Dış Görünüm">
+            <div class="custom-card-body">
+                <h3 class="custom-card-title">Proje İstanbul Dış Görünüm</h3>
+                <p class="custom-card-text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nunc vitae
+                    quam semper, sit amet fermentum quam lacinia. Vivamus non odio at erat tincidunt fermentum. Sed non augue vel
+                    erat tincidunt hendrerit.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="iframe-content">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.9855070848976!2d28.971548311897724!3d41.02557301823973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9e7a7777c43%3A0x4c76cf3dcc8b330b!2sGalata%20Kulesi!5e0!3m2!1str!2str!4v1711809971310!5m2!1str!2str"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <h1 style="text-align: center;">Proje İstanbul Konum</h1>
+        <p class="custom-iframe-text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nunc vitae
+            quam semper, sit amet fermentum quam lacinia. Vivamus non odio at erat tincidunt fermentum. Sed non augue vel erat
+            tincidunt hendrerit.
+        </p>
+    </div>
+
+    <div class="container mt-5">
+        <div style="display: flex;">
+            <div style="width: 50%; padding-right: 10px;">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title">Building Beyond Boundaries</h1>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla
+                            nunc vitae quam semper, sit amet fermentum quam lacinia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 25%; padding-right: 10px;">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <i class="fa-regular fa-building"></i>
+                        </p>
+                        <h5 class="card-title">2+1 Daire</h5>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 25%; padding-right: 10px;">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                        <p class="card-text"><i class="fa-regular fa-flag"></i></p>
+                        <h5 class="card-title">Yapım aşamasında</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display: flex;">
+            <div style="width: 25%; padding-right: 10px;">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                        <p class="card-text"><i class="fa-solid fa-car-side"></i></p>
+                        <h5 class="card-title">Otopark</h5>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 25%; padding-right: 10px;">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                        <p class="card-text"><img width="25px" src="kid-icon.png" alt=""></p>
+                        <h5 class="card-title">Çocuk Alanı</h5>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 25%; padding-right: 10px;">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                        <p class="card-text"><img width="25px" src="swimming-icon.png" alt=""></p>
+                        <h5 class="card-title">Havuz</h5>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 25%; padding-right: 10px;">
+                <div class="card text-white bg-dark mb-3">
+                    <div class="card-body">
+                        <p class="card-text"><i class="fa-solid fa-dumbbell"></i></p>
+                        <h5 class="card-title">Spor Salonu</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class=" contact-section-contacUs">
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Bize Ulaşın</h2>
+                <p>Hoş geldiniz! Eğer herhangi bir sorunuz, öneriniz ya da işbirliği tekli  finiz varsa, sizinle iletişim kurmaktan memnuniyet duyarız.</p>
+                <div class="contact-info d-flex flex-column">
+                    <div style="display:flex">
+                        <img src="~/images/1.png" alt="1" class="custom-image-icons">
+                        <img src="~/images/2.png" alt="1" class="custom-image-icons">
+                        <img src="~/images/3.png" alt="1" class="custom-image-icons">
+                        <img src="~/images/4.png" alt="1" class="custom-image-icons">
+                        <img src="~/images/5.png" alt="1" class="custom-image-icons">
+                        <img src="~/images/6.png" alt="1" class="custom-image-icons">
+                    </div>
+
+                    <div class="contact-icons mt-3">
+                        <img src="~/images/face-icon.png" alt="1" class="custom-image-icons">
+                        <img src="~/images/insta-icon.png" alt="1" class="custom-image-icons">
+                        <img src="~/images/tw-icon.png" alt="1" class="custom-image-icons">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6" style="width:500px;">
+                <form class="contact-form">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label style="font-weight:500">İsim Soyisim</label>
+                            <input type="text" class="form-control" placeholder="Yazınız...">
+                        </div>
+                        <div class="col-md-6">
+                            <label style="font-weight:500">Email Adresi</label>
+                            <input type="email" class="form-control" placeholder="Yazınız...">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label style="font-weight:500">Telefon </label>
+                            <input type="tel" class="form-control" placeholder="Yazınız...">
+                        </div>
+                        <div class="col-md-6">
+                            <label style="font-weight:500">Konu </label>
+                            <input type="text" class="form-control" placeholder="Yazınız...">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="5" placeholder="Lütfen buraya mesajınızı yazınız..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 footer-column">
+                    <div class="footer-logo">
+                        <div>MFC</div>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fringilla nunc vitae quam semper, sit amet fermentum quam lacinia. Vivamus non odio at erat tincidunt fermentum. Sed non augue vel erat tincidunt hendrerit.
+                    </p>
+                    <!-- Social icons -->
+                    <div>
+                        <img src="~/images/face-icon.png" alt="1" class="custom-image-icons">
+                        <img src="~/images/insta-icon.png" alt="1" class="custom-image-icons">
+                        <img src="~/images/tw-icon.png" alt="1" class="custom-image-icons">
+                    </div>
+                </div>
+                <div class="col-md-2 footer-column">
+                    <h5>Product</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Anasayfa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Hakkimizda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Pricing</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 footer-column">
+                    <h5>CMS</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog Single</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-2 footer-column">
+                    <h5>Utility</h5>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">404 Error</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
