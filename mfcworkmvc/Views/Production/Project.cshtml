@@ -33,7 +33,7 @@
         .nav-tabs {
             display: flex;
             justify-content: center;
-            border: none;
+            border-bottom : none!important;
         }
 
         /* Styles for the tab items */
@@ -155,6 +155,23 @@
             border-radius: 50%;
             margin-right: 250px !important;
         }
+
+        .tab-content-product {
+            border: 1px solid #ddd;
+            /* Adds border around the tab content */
+            border-radius: 15px;
+            /* Rounds corners for the tab content */
+            padding: 16px;
+            /* Padding inside the tab content */
+            margin-top: 8px;
+            /* Spacing between tabs and content */
+            background-color: #fff;
+            /* Background color for the tab content */
+            margin-left: 15%;
+            margin-right: 15%;
+        }
+
+        
     </style>
 </head>
 
@@ -172,7 +189,7 @@
                 <li class="nav-item">
                     <button class="main-tab @(counterHeader == 0 ? "active" : "")" id="category-tab-@mainCategory.id" data-toggle="tab" href="#category-@mainCategory.id" role="tab" aria-controls="category-@mainCategory.id" aria-selected="@(counterHeader == 0 ? "true" : "false")">
                         <i class="fa-regular fa-building"></i><br />
-                        <h6>@mainCategory.name</h6>
+                        <h6>@mainCategory.name.ToUpper()</h6>
                     </button>
                 </li>
                 counterHeader++;
@@ -180,6 +197,7 @@
         </ul>
 
         <div class="tab-content" id="myTabContent">
+
             <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
                 <div class="card-container">
                     @foreach (var product in Model.Products)
@@ -208,12 +226,12 @@
                             <li class="nav-item">
 
                                 <button class="btn  alt-tab" id="subcategory-tab-@subCategory.id" data-toggle="tab" href="#subcategory-@subCategory.id" role="tab" aria-controls="subcategory-@subCategory.id" aria-selected="true">
-                                    @subCategory.name
+                                    @subCategory.name.ToUpper()
                                 </button>
                             </li>
                         }
                     </ul>
-                    <div class="tab-content" id="sub-tab-content-@mainCategory.id">
+                    <div class="" id="sub-tab-content-@mainCategory.id">
                         @foreach (var subCategory in mainCategory.SubCategories)
                         {
                             <div class="tab-pane fade" id="subcategory-@subCategory.id" role="tabpanel" aria-labelledby="subcategory-tab-@subCategory.id">
