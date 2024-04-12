@@ -34,15 +34,21 @@ namespace mfcworkmvc.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("id,name,description,subCategoryId,mainCategoryId")] Product product)
+        public async Task<IActionResult> Create([Bind("id,name,description,subCategoryId,mainCategoryId,ImageBase64")] Product product)
         {
+            if (string.IsNullOrEmpty(product.ImageBase64))
+            {
+                // Handle the case where no image is provided
+                ModelState.AddModelError("ImageBase64", "Please provide an image for the product.");
+                // Optionally, return to the form view
+                return View(product);
+            }
 
             _dbContext.Add(product);
             await _dbContext.SaveChangesAsync();
-
-          
             return RedirectToAction("Index");
         }
-       
-    }   
+
+
+    }
 }

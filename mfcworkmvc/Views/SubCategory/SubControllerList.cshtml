@@ -47,16 +47,17 @@
     <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
+                <th>Alt Kategori</th>
+                <th>Ana Kategori</th>
 
         </thead>
         <tbody>
             @foreach (var product in Model)
             {
                 <tr>
-                    <td>@product.id</td>
                     <td>@product.name</td>
+                    <td>@product.mainCategory.name</td>
+
                 </tr>
             }
         </tbody>

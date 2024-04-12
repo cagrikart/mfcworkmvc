@@ -7,6 +7,8 @@ namespace mfcworkmvc.Models
         public int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
+        public string ImageBase64 { get; set; } 
+
         [ForeignKey("subCategoryId")]
 
         public int? subCategoryId { get; set; }

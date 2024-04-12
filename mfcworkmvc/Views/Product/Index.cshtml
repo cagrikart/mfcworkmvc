@@ -44,20 +44,22 @@
     <table class="table table-hover">
         <thead class="thead-dark">
             <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Description</th>
-                <th>Sub Category</th>
-                <th>Main Category</th>
+                <th>Ürün Adı </th>
+                <th>Açıklama</th>
+                <th>Resim</th>
+                <th>Alt Kategorisi</th>
+                <th>Ana Kategorisi</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var product in Model)
             {
                 <tr>
-                    <td>@product.id</td>
                     <td>@product.name</td>
                     <td>@product.description</td>
+                    <td>
+                        <img src="data:image/jpeg;base64,@product.ImageBase64" width="100" alt="Product Image" />
+                    </td>
                     <td>@product.subCategory.name</td>
                     <td>@product.mainCategory.name</td>
                 </tr>

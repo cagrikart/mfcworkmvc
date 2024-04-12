@@ -1,110 +1,102 @@
-﻿<!DOCTYPE html>
-<html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .accordion {
-            border-radius: 20px;
-            margin-bottom: 10px;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: 3px solid #f2f2f2;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-            background-color: white;
-        }
-
-        .active {
-            color: #5b8aff;
-            font-weight: bold;
-        }
-
-            .accordion:after {
-                content: '\002B';
-                color: #777;
-                font-weight: bold;
-                float: right;
-                margin-left: 5px;
+﻿    <!DOCTYPE html>
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            /* Accordion butonlarının stili */
+            .accordion {
+                border-radius: 20px;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none; 
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                transition: background-color 0.4s ease, box-shadow 0.4s ease;
+                background-color: white;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
             }
 
-        .active:after {
-            content: "\2212";
-        }
-
-
-            .accordion:after {
-                font-weight: bold;
-                float: right;
-                margin-left: 5px;
-            }
-
-
-        .panel {
-            padding: 0 18px;
-            background-color: white;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.2s ease-out;
-        }
-    </style>
-</head>
-
-<body>
-    <div style="background-color: #f7f7f7;">
-
-    
-    <div style=" margin-left:20%;margin-right:20%;" >
-        <h2 style="text-align:center;">Sıkça Sorulan Sorular</h2>
-       
-        <button class="accordion">Section 1</button>
-        <div class="panel">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-            </p>
-        </div>
-
-        <button class="accordion">Section 2</button>
-        <div class="panel">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-            </p>
-        </div>
-
-        <button class="accordion">Section 3</button>
-        <div class="panel">
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat.
-            </p>
-        </div>
-        </div>
-    </div>
-    <script>
-        var acc = document.getElementsByClassName("accordion");
-        var i;
-
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
+                .accordion:hover {
+                    background-color: #f8f8f8; 
                 }
-            });
-        }
-    </script>
 
-</body>
+                .accordion:active,
+                .accordion.active {
+                    background-color: #e8e8e8; 
+                }
 
-</html>
+            
+            .active {
+                color: #5b8aff;
+                font-weight: bold;
+            }
+
+            .panel {
+                background-color: white;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); 
+            }
+
+                .panel p {
+                    padding: 18px; 
+                    margin: 0; 
+                }
+
+            .indicator {
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="background-color: #f7f7f7; margin-bottom:50px;">
+            <div style="margin-left:20%; margin-right:20%;">
+                <h2 style="text-align:center;">Sıkça Sorulan Sorular</h2>
+                <!-- Accordion butonları ve panelleri -->
+                <button class="accordion">Section 1<span class="indicator">+</span></button>
+                <div class="panel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                </div>
+                <br/>
+                <button class="accordion">Section 2<span class="indicator">+</span></button>
+                <div class="panel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                </div>
+                <br />
+
+                <button class="accordion">Section 3<span class="indicator">+</span></button>
+                <div class="panel">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                </div>
+            </div>
+        </div>
+        <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var indicator = this.querySelector('.indicator');
+                    if (this.classList.contains("active")) {
+                        indicator.textContent = "-";
+                    } else {
+                        indicator.textContent = "+";
+                    }
+                    var panel = this.nextElementSibling;
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                });
+            }
+        </script>
+    </body>
+    </html>

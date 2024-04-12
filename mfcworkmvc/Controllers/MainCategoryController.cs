@@ -26,12 +26,10 @@ namespace mfcworkmvc.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(MainCategory mainCategory)
         {
-            if (ModelState.IsValid)
-            {
+
                 _mainCategoryService.AddMainCategory(mainCategory);
                 return RedirectToAction("Index");
-            }
-            return View(mainCategory);
+           
         }
     }
 }

@@ -86,9 +86,9 @@ namespace mfcworkmvc.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     name = table.Column<string>(type: "text", nullable: false),
                     description = table.Column<string>(type: "text", nullable: false),
-                    subCategoryId = table.Column<int>(type: "integer", nullable: false),
-                    mainCategoryId = table.Column<int>(type: "integer", nullable: true),
-                    SubCategoryid = table.Column<int>(type: "integer", nullable: true)
+                    ImageBase64 = table.Column<string>(type: "text", nullable: false),
+                    subCategoryId = table.Column<int>(type: "integer", nullable: true),
+                    mainCategoryId = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -99,16 +99,10 @@ namespace mfcworkmvc.Migrations
                         principalTable: "MainCategories",
                         principalColumn: "id");
                     table.ForeignKey(
-                        name: "FK_Products_SubCategories_SubCategoryid",
-                        column: x => x.SubCategoryid,
-                        principalTable: "SubCategories",
-                        principalColumn: "id");
-                    table.ForeignKey(
                         name: "FK_Products_SubCategories_subCategoryId",
                         column: x => x.subCategoryId,
                         principalTable: "SubCategories",
-                        principalColumn: "id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "id");
                 });
 
             migrationBuilder.CreateIndex(
@@ -120,11 +114,6 @@ namespace mfcworkmvc.Migrations
                 name: "IX_Products_subCategoryId",
                 table: "Products",
                 column: "subCategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Products_SubCategoryid",
-                table: "Products",
-                column: "SubCategoryid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Students_GradeId",

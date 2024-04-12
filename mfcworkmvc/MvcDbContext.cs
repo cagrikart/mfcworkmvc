@@ -16,13 +16,5 @@ namespace mfcworkmvc
     {
 
     }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Product>()
-                .HasOne(p => p.subCategory) // Product ile SubCategory arasında tek yönlü bir ilişki tanımlıyoruz.
-                .WithMany() // SubCategory'nin Product'a geri dönük bir navigasyon özelliği olmadığını varsayıyoruz.
-                .HasForeignKey(p => p.subCategoryId); // İlişkinin dış anahtarını belirtiyoruz.
-        }
-
     }
 }
