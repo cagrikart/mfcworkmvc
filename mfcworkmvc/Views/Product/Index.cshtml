@@ -58,7 +58,10 @@
                     <td>@product.name</td>
                     <td>@product.description</td>
                     <td>
-                        <img src="data:image/jpeg;base64,@product.ImageBase64" width="100" alt="Product Image" />
+                        @foreach (var imageBase64 in product.ImagesBase64)
+                        {
+                            <img src="data:image/jpeg;base64,@imageBase64" width="100" alt="Product Image" />
+                        }
                     </td>
                     <td>@product.subCategory.name</td>
                     <td>@product.mainCategory.name</td>

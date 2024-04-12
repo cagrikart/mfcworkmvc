@@ -3,6 +3,8 @@
     public class AllModel
     {
         public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<ProductImage> ProductImages{ get; set; }
+
         public IEnumerable<SubCategory> SubCategories{ get; set; }
         public IEnumerable<MainCategory> MainCategories { get; set; }
     }

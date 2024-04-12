@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
@@ -6,7 +7,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace mfcworkmvc.Migrations
 {
     /// <inheritdoc />
-    public partial class initial : Migration
+    public partial class initialü : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -86,7 +87,7 @@ namespace mfcworkmvc.Migrations
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     name = table.Column<string>(type: "text", nullable: false),
                     description = table.Column<string>(type: "text", nullable: false),
-                    ImageBase64 = table.Column<string>(type: "text", nullable: false),
+                    ImagesBase64 = table.Column<List<string>>(type: "text[]", nullable: false),
                     subCategoryId = table.Column<int>(type: "integer", nullable: true),
                     mainCategoryId = table.Column<int>(type: "integer", nullable: true)
                 },
