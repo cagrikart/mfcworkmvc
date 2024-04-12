@@ -1,100 +1,110 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sikca</title>
-    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .accordion {
+            border-radius: 20px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: 3px solid #f2f2f2;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            background-color: white;
+        }
+
+        .active {
+            color: #5b8aff;
+            font-weight: bold;
+        }
+
+            .accordion:after {
+                content: '\002B';
+                color: #777;
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+            }
+
+        .active:after {
+            content: "\2212";
+        }
+
+
+            .accordion:after {
+                font-weight: bold;
+                float: right;
+                margin-left: 5px;
+            }
+
+
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- FAQ 2 - Bootstrap Brain Component -->
-<section class="">
-    <div class="container" style="text-align: center;">
-    <h3>Frequently Asked Questions</h3>
-      <div style="margin-left: 10%; margin-right: 10%;" class="row">
-        <div class="col-12 ">
-          <div class="row justify-content-xl-end">
-            <div class="col-12 col-xl-11">
-              <div class="accordion accordion-flush" id="accordionExample">
-                <div class="accordion-item mb-4 shadow-sm">
-                  <h2 class="accordion-header" id="headingOne">
-                    <button class="accordion-button bg-transparent fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                      How Do I Change My Billing Information?
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                      <p>To change your billing information, please follow these steps:</p>
-                      <ul>
-                        <li>Go to our website and sign in to your account.</li>
-                        <li>Click on your profile picture in the top right corner of the page and select "Account Settings."</li>
-                        <li>Under the "Billing Information" section, click on "Edit."</li>
-                        <li>Make your changes and click on "Save."</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item mb-4 shadow-sm">
-                  <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed bg-transparent fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      How Does Payment System Work?
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-                    <div class="accordion-body">
-                      A payment system is a way to transfer money from one person or organization to another. It is a complex process that involves many different parties, including banks, credit card companies, and merchants.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item mb-4 shadow-sm">
-                  <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button collapsed bg-transparent fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      Will taxes be included in my monthly invoice?
-                    </button>
-                  </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
-                    <div class="accordion-body">
-                      Whether or not taxes are included in your monthly invoice depends on a number of factors, including your location, the type of services you are receiving, and the policies of the company providing you with those services.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item mb-4 shadow-sm">
-                  <h2 class="accordion-header" id="headingFour">
-                    <button class="accordion-button collapsed bg-transparent fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      What currency will I be charged in?
-                    </button>
-                  </h2>
-                  <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
-                    <div class="accordion-body">
-                      The currency you are charged in when making a purchase will depend on a number of factors, including the merchant you are purchasing from, the country you are purchasing from, and the payment method you are using.
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item shadow-sm">
-                  <h2 class="accordion-header" id="headingFive">
-                    <button class="accordion-button collapsed bg-transparent fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                      How Do I Cancel My Account?
-                    </button>
-                  </h2>
-                  <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive">
-                    <div class="accordion-body">
-                      <p>To cancel your account, please follow these steps:</p>
-                      <ul>
-                        <li>Go to our website and sign in to your account.</li>
-                        <li>Click on your profile picture in the top right corner of the page and select "Account Settings."</li>
-                        <li>Scroll to the bottom of the page and click on "Cancel Account."</li>
-                        <li>Enter your password and click on "Cancel Account."</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div style="background-color: #f7f7f7;">
+
+    
+    <div style=" margin-left:20%;margin-right:20%;" >
+        <h2 style="text-align:center;">Sıkça Sorulan Sorular</h2>
+       
+        <button class="accordion">Section 1</button>
+        <div class="panel">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+            </p>
         </div>
-      </div>
+
+        <button class="accordion">Section 2</button>
+        <div class="panel">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+            </p>
+        </div>
+
+        <button class="accordion">Section 3</button>
+        <div class="panel">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat.
+            </p>
+        </div>
+        </div>
     </div>
-  </section>
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
 </body>
-<script src="https://unpkg.com/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 </html>
