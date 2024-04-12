@@ -17,17 +17,13 @@
           integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- Özel Stiller -->
     <style>
         .container {
             max-width: 960px;
-            /* Adjust the width as necessary */
             margin: 20px auto;
             padding: 20px;
             background-color: #fff;
-            /* Use a light background */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            /* Soft shadow for depth */
         }
 
         .nav-tabs {
@@ -36,38 +32,24 @@
             border-bottom : none!important;
         }
 
-        /* Styles for the tab items */
         .nav-item {
             margin-right: 15px;
-            /* Adjusts the space between tabs */
         }
 
-        /* Styles for the tab links */
         .nav-link {
-            /* Hides border */
             border-radius: 15px;
-            /* Rounds corners */
             padding: 8px 16px;
-            /* Adjust padding */
             color: #000;
-            /* Text color for non-active tabs */
             background-color: #f0f0f0;
-            /* Background color for non-active tabs */
-            /* Smooth transition for hover effects */
         }
 
 
 
-        /* Styles for the tab content */
         .tab-content {
             border: 1px solid #ddd;
-            /* Adds border around the tab content */
             border-radius: 15px;
-            /* Rounds corners for the tab content */
             padding: 16px;
-            /* Padding inside the tab content */
             margin-top: 8px;
-            /* Spacing between tabs and content */
             background-color: #fff;
         
         }
@@ -77,22 +59,19 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             grid-gap: 20px;
-            /* Space between cards */
             justify-content: center;
             padding: 20px;
         }
 
         .card:nth-child(3n+1) {
-            grid-column-start: 1; /* 4., 8., 12., ... kartları ilk sütunda başlat */
+            grid-column-start: 1; 
         }
         .card {
             flex: 0 1 calc(33.333% - 20px);
-            /* Subtract gap from width */
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             border-radius: 16px;
             overflow: hidden;
             margin-bottom: 20px;
-            /* Space between rows */
             background: #fff;
         }
 
@@ -159,15 +138,10 @@
 
         .tab-content-product {
             border: 1px solid #ddd;
-            /* Adds border around the tab content */
             border-radius: 15px;
-            /* Rounds corners for the tab content */
             padding: 16px;
-            /* Padding inside the tab content */
             margin-top: 8px;
-            /* Spacing between tabs and content */
             background-color: #fff;
-            /* Background color for the tab content */
             margin-left: 15%;
             margin-right: 15%;
         }
